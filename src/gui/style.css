@@ -1,0 +1,180 @@
+/* ROOT */
+
+.root {
+    -fx-font-family: "Segoe UI", "Inter", sans-serif;
+    -fx-background-color: linear-gradient(to bottom, #f4f6fb, #e9ecf5);
+}
+
+
+/* TABLE VIEW */
+
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-padding: 5;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 4);
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #4F46E5;
+    -fx-background-radius: 10 10 0 0;
+}
+
+.table-view .column-header,
+.table-view .filler {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+}
+
+.table-row-cell:filled:selected {
+    -fx-background-color: #e0e7ff;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #f3f4ff;
+}
+
+
+/* BUTTONS */
+
+.button {
+    -fx-background-color: #6366F1;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 6 14 6 14;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #4F46E5;
+}
+
+.button:pressed {
+    -fx-background-color: #4338CA;
+}
+
+
+/* SPECIAL BUTTON COLORS */
+
+#buttonToDeleteCar,
+#buttonToDeleteReservation {
+    -fx-background-color: #ef4444;
+}
+
+#buttonToDeleteCar:hover,
+#buttonToDeleteReservation:hover {
+    -fx-background-color: #dc2626;
+}
+
+#buttonToUndoCarAction,
+#buttonToUndoReservationAction,
+#buttonToRedoCarAction,
+#buttonToRedoReservationAction {
+    -fx-background-color: #10b981;
+}
+
+#buttonToUndoCarAction:hover,
+#buttonToUndoReservationAction:hover,
+#buttonToRedoCarAction:hover,
+#buttonToRedoReservationAction:hover {
+    -fx-background-color: #059669;
+}
+
+
+/* TEXT FIELDS */
+
+.text-field {
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #d1d5db;
+    -fx-padding: 6;
+    -fx-background-color: white;
+}
+
+.text-field:focused {
+    -fx-border-color: #6366F1;
+}
+
+
+/* CHOICE BOX */
+
+.choice-box {
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #d1d5db;
+}
+
+.choice-box:hover {
+    -fx-border-color: #6366F1;
+}
+
+
+/* LIST VIEW */
+
+.list-view {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #e5e7eb;
+}
+
+.list-cell {
+    -fx-padding: 8;
+}
+
+.list-cell:hover {
+    -fx-background-color: #eef2ff;
+}
+
+.list-cell:filled:selected {
+    -fx-background-color: #c7d2fe;
+}
+
+
+/* TAB PANE */
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: transparent;
+}
+
+.tab {
+    -fx-background-color: #e5e7eb;
+    -fx-background-radius: 8 8 0 0;
+}
+
+.tab:selected {
+    -fx-background-color: #6366F1;
+}
+
+.tab:selected .tab-label {
+    -fx-text-fill: white;
+}
+
+.tab-label {
+    -fx-text-fill: #374151;
+    -fx-font-weight: bold;
+}
+
+
+/* ALERT DIALOG */
+
+.dialog-pane {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+}
+
+.dialog-pane .button {
+    -fx-background-color: #6366F1;
+}

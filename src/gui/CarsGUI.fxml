@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <TabPane layoutX="10.0" layoutY="10.0" prefHeight="630.0" prefWidth="880.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Cars">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Text layoutX="14.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filter:">
+                                    <font><Font name="System Bold" size="14.0" /></font>
+                                </Text>
+                                <ChoiceBox fx:id="choiceBoxForSelectingCarFilterType" layoutX="60.0" layoutY="14.0" prefWidth="140.0" />
+                                <TextField fx:id="textFieldInputForFilteringCars" layoutX="210.0" layoutY="14.0" prefHeight="26.0" prefWidth="180.0" promptText="Search text..." />
+                                <Button fx:id="buttonToApplyCarFilter" layoutX="400.0" layoutY="14.0" mnemonicParsing="false" onAction="#carApplyFilterHandler" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Apply" />
+                                <Button fx:id="buttonToResetCarFilter" layoutX="460.0" layoutY="14.0" mnemonicParsing="false" onAction="#carResetHandler" text="Reset" />
+
+                                <Text layoutX="560.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sort:">
+                                    <font><Font name="System Bold" size="14.0" /></font>
+                                </Text>
+                                <ChoiceBox fx:id="choiceBoxForSelectingCarSortType" layoutX="600.0" layoutY="14.0" prefWidth="160.0" />
+                                <Button fx:id="buttonToSortCars" layoutX="770.0" layoutY="14.0" mnemonicParsing="false" onAction="#carSortHandler" text="Sort" />
+
+                                <TableView fx:id="tableViewForDisplayingCars" layoutX="14.0" layoutY="55.0" prefHeight="350.0" prefWidth="850.0">
+                                    <columns>
+                                        <TableColumn fx:id="tableColumnForCarId" prefWidth="80.0" text="ID" />
+                                        <TableColumn fx:id="tableColumnForCarMake" prefWidth="268.0" text="Make" />
+                                        <TableColumn fx:id="tableColumnForCarModel" prefWidth="239.0" text="Model" />
+                                        <TableColumn fx:id="tableColumnForCarRentalPrice" prefWidth="262.0" text="Rental Price" />
+                                    </columns>
+                                </TableView>
+
+                                <Label layoutX="14.0" layoutY="420.0" text="ID:" textFill="#666666" />
+                                <TextField fx:id="textFieldInputForCarId" layoutX="14.0" layoutY="440.0" prefWidth="80.0" promptText="Ex: 1" />
+
+                                <Label layoutX="110.0" layoutY="420.0" text="Make:" textFill="#666666" />
+                                <TextField fx:id="textFieldInputForCarMake" layoutX="110.0" layoutY="440.0" prefWidth="180.0" promptText="Ex: Dacia" />
+
+                                <Label layoutX="310.0" layoutY="420.0" text="Model:" textFill="#666666" />
+                                <TextField fx:id="textFieldInputForCarModel" layoutX="310.0" layoutY="440.0" prefWidth="180.0" promptText="Ex: Logan" />
+
+                                <Label layoutX="510.0" layoutY="420.0" text="Price:" textFill="#666666" />
+                                <TextField fx:id="textFieldInputForCarPrice" layoutX="510.0" layoutY="440.0" prefWidth="120.0" promptText="Ex: 100.0" />
+
+                                <Button fx:id="buttonToAddCar" layoutX="14.0" layoutY="490.0" mnemonicParsing="false" onAction="#carAddButtonHandler" prefHeight="30.0" prefWidth="80.0" text="Add" />
+                                <Button fx:id="buttonToModifyCar" layoutX="105.0" layoutY="490.0" mnemonicParsing="false" onAction="#carModifyButtonHandler" prefHeight="30.0" prefWidth="80.0" text="Update" />
+                                <Button fx:id="buttonToDeleteCar" layoutX="193.0" layoutY="490.0" mnemonicParsing="false" onAction="#carDeleteButtonHandler" prefHeight="30.0" prefWidth="80.0" text="Delete" />
+
+                                <Button fx:id="buttonToClearInputs" layoutX="285.0" layoutY="490.0" mnemonicParsing="false" onAction="#carClearInputButtonHandler" prefHeight="30.0" prefWidth="80.0" text="Clear" />
+
+                                <Button fx:id="buttonToUndoCarAction" layoutX="500.0" layoutY="490.0" mnemonicParsing="false" onAction="#carUndoHandler" prefHeight="30.0" prefWidth="70.0" text="Undo" />
+                                <Button fx:id="buttonToRedoCarAction" layoutX="580.0" layoutY="490.0" mnemonicParsing="false" onAction="#carRedoHandler" prefHeight="30.0" prefWidth="70.0" text="Redo" />
+
+                                <Button fx:id="buttonToExitCarTab" layoutX="780.0" layoutY="490.0" mnemonicParsing="false" onAction="#carExitButtonHandler" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #333333; -fx-text-fill: white;" text="Exit" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+
+                <Tab text="Reservations">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Text layoutX="14.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filter:">
+                                    <font><Font name="System Bold" size="14.0" /></font>
+                                </Text>
+                                <ChoiceBox fx:id="choiceBoxForSelectingReservationFilterType" layoutX="60.0" layoutY="14.0" prefWidth="160.0" />
+                                <TextField fx:id="textFieldInputForFilteringReservations" layoutX="230.0" layoutY="14.0" prefHeight="26.0" prefWidth="200.0" promptText="Search text..." />
+                                <Button fx:id="buttonToApplyReservationFilter" layoutX="440.0" layoutY="14.0" mnemonicParsing="false" onAction="#reservationApplyFilterHandler" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Apply" />
+                                <Button fx:id="buttonToResetReservationFilter" layoutX="500.0" layoutY="14.0" mnemonicParsing="false" onAction="#reservationResetFilterButtonHandler" text="Reset" />
+
+                                <TableView fx:id="tableViewForDisplayingReservations" layoutX="14.0" layoutY="55.0" prefHeight="350.0" prefWidth="850.0">
+                                    <columns>
+                                        <TableColumn fx:id="tableColumnForReservationId" prefWidth="90.0" text="ID" />
+                                        <TableColumn fx:id="tableColumnForReservationCarId" prefWidth="81.0" text="Car ID" />
+                                        <TableColumn fx:id="tableColumnForReservationCustomerName" prefWidth="260.0" text="Customer Name" />
+                                        <TableColumn fx:id="tableColumnForReservationStartDate" prefWidth="201.0" text="Start Date" />
+                                        <TableColumn fx:id="tableColumnForReservationEndDate" prefWidth="217.0" text="End Date" />
+                                    </columns>
+                                </TableView>
+
+                                <Label layoutX="14.0" layoutY="420.0" text="ID:" textFill="#666666" />
+                                <TextField fx:id="textFieldInputForReservationId" layoutX="14.0" layoutY="440.0" prefWidth="60.0" promptText="ID" />
+
+                                <Label layoutX="90.0" layoutY="420.0" text="Car ID:" textFill="#666666" />
+                                <TextField fx:id="textFieldInputForReservationCarId" layoutX="90.0" layoutY="440.0" prefWidth="80.0" promptText="CarId" />
+
+                                <Label layoutX="190.0" layoutY="420.0" text="Customer Name:" textFill="#666666" />
+                                <TextField fx:id="textFieldInputForCustomerName" layoutX="190.0" layoutY="440.0" prefWidth="200.0" promptText="Full Name Of The Customer" />
+
+                                <Label layoutX="410.0" layoutY="420.0" text="Start (YYYY-MM-DD):" textFill="#666666" />
+                                <TextField fx:id="textFieldInputForStartDate" layoutX="410.0" layoutY="440.0" prefWidth="140.0" promptText="2025-12-11" />
+
+                                <Label layoutX="570.0" layoutY="420.0" text="End (YYYY-MM-DD):" textFill="#666666" />
+                                <TextField fx:id="textFieldInputForEndDate" layoutX="570.0" layoutY="440.0" prefWidth="140.0" promptText="2026-12-10" />
+
+                                <Button fx:id="buttonToAddReservation" layoutX="14.0" layoutY="490.0" mnemonicParsing="false" onAction="#reservationAddButtonHandler" prefHeight="30.0" prefWidth="80.0" text="Add" />
+                                <Button fx:id="buttonToModifyReservation" layoutX="105.0" layoutY="490.0" mnemonicParsing="false" onAction="#reservationModifyButtonHandler" prefHeight="30.0" prefWidth="80.0" text="Update" />
+                                <Button fx:id="buttonToDeleteReservation" layoutX="195.0" layoutY="490.0" mnemonicParsing="false" onAction="#reservationDeleteButtonHandler" prefHeight="30.0" prefWidth="80.0" text="Delete" />
+
+                                <Button layoutX="285.0" layoutY="490.0" mnemonicParsing="false" onAction="#reservationClearInputButtonHandler" prefHeight="30.0" prefWidth="70.0" text="Clear" />
+
+                                <Button fx:id="buttonToUndoReservationAction" layoutX="500.0" layoutY="490.0" mnemonicParsing="false" onAction="#reservationUndoHandler" prefHeight="30.0" prefWidth="70.0" text="Undo" />
+                                <Button fx:id="buttonToRedoReservationAction" layoutX="580.0" layoutY="490.0" mnemonicParsing="false" onAction="#reservationRedoHandler" prefHeight="30.0" prefWidth="70.0" text="Redo" />
+
+                                <Button fx:id="buttonToExitReservationTab" layoutX="780.0" layoutY="490.0" mnemonicParsing="false" onAction="#reservationExitButtonHandler" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #333333; -fx-text-fill: white;" text="Exit" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
